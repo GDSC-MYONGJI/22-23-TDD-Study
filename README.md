@@ -78,6 +78,7 @@
 
  <details><summary>예시</summary>
 <br>
+
 ### 해당 주차에 맞게 이슈가 올라옵니다.
 
 ![공지용 image1](https://user-images.githubusercontent.com/65845941/210167396-43018066-ebd7-41d3-a96e-415eae74ceaf.png)
