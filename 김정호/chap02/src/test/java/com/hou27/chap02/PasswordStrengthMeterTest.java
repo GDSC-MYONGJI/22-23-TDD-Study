@@ -12,4 +12,11 @@ public class PasswordStrengthMeterTest {
     assertEquals(PasswordStrength.STRONG, result);
   }
 
+  @Test
+  void meetsOtherCriteria_except_for_Length_Then_Normal() {
+    PasswordStrengthMeter meter = new PasswordStrengthMeter();
+    PasswordStrength result = meter.meter("12345A");
+    assertEquals(PasswordStrength.NORMAL, result);
+  }
+
 }
