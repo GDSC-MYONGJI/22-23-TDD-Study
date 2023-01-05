@@ -19,4 +19,11 @@ public class PasswordStrengthMeterTest {
     assertEquals(PasswordStrength.NORMAL, result);
   }
 
+  @Test
+  void meetsOtherCriteria_except_for_Number_Then_Normal() {
+    PasswordStrengthMeter meter = new PasswordStrengthMeter();
+    PasswordStrength result = meter.meter("ABCDEexceptNumber");
+    assertEquals(PasswordStrength.NORMAL, result);
+  }
+
 }
