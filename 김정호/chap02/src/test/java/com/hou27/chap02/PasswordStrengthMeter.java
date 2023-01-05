@@ -6,6 +6,19 @@ public class PasswordStrengthMeter {
     if (s == null || s.isBlank()) {
       return PasswordStrength.INVALID;
     }
+
+    int flagCnt = getFlagCnt(s);
+
+    if (flagCnt == 2) {
+      return PasswordStrength.NORMAL;
+    } else if (flagCnt == 3) {
+      return PasswordStrength.STRONG;
+    } else {
+      return PasswordStrength.WEAK;
+    }
+  }
+
+  private int getFlagCnt(String s) {
     int flagCnt = 0;
     if (s.length() >= 8) {
       flagCnt++;
@@ -16,14 +29,7 @@ public class PasswordStrengthMeter {
     if (s.matches(".*[A-Z].*")) {
       flagCnt++;
     }
-
-    if (flagCnt == 2) {
-      return PasswordStrength.NORMAL;
-    } else if (flagCnt == 3) {
-      return PasswordStrength.STRONG;
-    } else {
-      return PasswordStrength.WEAK;
-    }
+    return flagCnt;
   }
 
 }
