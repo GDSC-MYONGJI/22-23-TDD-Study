@@ -17,12 +17,12 @@ public class PasswordStrengthMeter {
       flagCnt++;
     }
 
-    if (flagCnt == 1) {
-      return PasswordStrength.WEAK;
+    if (flagCnt == 2) {
+      return PasswordStrength.NORMAL;
     } else if (flagCnt == 3) {
       return PasswordStrength.STRONG;
     } else {
-      return PasswordStrength.NORMAL;
+      return PasswordStrength.WEAK;
     }
   }
 
