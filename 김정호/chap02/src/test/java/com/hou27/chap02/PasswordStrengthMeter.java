@@ -7,29 +7,29 @@ public class PasswordStrengthMeter {
       return PasswordStrength.INVALID;
     }
 
-    int flagCnt = getFlagCnt(s);
+    int criteriaCnt = getCriteriaCnt(s);
 
-    if (flagCnt == 2) {
+    if (criteriaCnt == 2) {
       return PasswordStrength.NORMAL;
-    } else if (flagCnt == 3) {
+    } else if (criteriaCnt == 3) {
       return PasswordStrength.STRONG;
     } else {
       return PasswordStrength.WEAK;
     }
   }
 
-  private int getFlagCnt(String s) {
-    int flagCnt = 0;
+  private int getCriteriaCnt(String s) {
+    int criteriaCnt = 0;
     if (s.length() >= 8) {
-      flagCnt++;
+      criteriaCnt++;
     }
     if (s.matches(".*[0-9].*")) {
-      flagCnt++;
+      criteriaCnt++;
     }
     if (s.matches(".*[A-Z].*")) {
-      flagCnt++;
+      criteriaCnt++;
     }
-    return flagCnt;
+    return criteriaCnt;
   }
 
 }
