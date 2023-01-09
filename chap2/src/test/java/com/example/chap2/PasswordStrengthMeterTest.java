@@ -55,6 +55,12 @@ public class PasswordStrengthMeterTest {
         assertStrength("ab12!@df", PasswordStrength.NORMAL);
     }
 
+    /*when meets only length criteria then weak*/
+    @Test
+    void meetsOnlyLengthCriteria_Then_Weak() {
+        assertStrength("abdefghi", PasswordStrength.WEAK);
+    }
+
 
 }
 
