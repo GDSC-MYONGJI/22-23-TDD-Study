@@ -29,6 +29,11 @@ public class PasswordStrengthMeterTest {
     }
 
     @Test
+    void meetsOtherCriteria_except_for_SpecialCharacter_Then_Normal() {
+        assertStrength("abAB11111", PasswordStrength.NORMAL);
+    }
+
+    @Test
     void nullInput_Then_Invalid() {
         assertStrength(null, PasswordStrength.INVALID);
     }

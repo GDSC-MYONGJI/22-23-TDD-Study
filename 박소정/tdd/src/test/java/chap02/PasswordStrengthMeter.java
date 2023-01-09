@@ -6,8 +6,8 @@ public class PasswordStrengthMeter {
 
         int metCounts = getMetCriteriaCounts(s);
 
-        if(metCounts<=1) return PasswordStrength.WEAK;
-        if(metCounts==2) return PasswordStrength.NORMAL;
+        if(metCounts<=2) return PasswordStrength.WEAK;
+        if(metCounts==3) return PasswordStrength.NORMAL;
 
         return PasswordStrength.STRONG;
     }
@@ -17,6 +17,7 @@ public class PasswordStrengthMeter {
         if(s.length()>=8) metCounts++;
         if(meetsContainingNumberCriteria(s)) metCounts++;
         if(meetsContainingUppercaseCriteria(s)) metCounts++;
+        if(meetsContainingSpecialCharacterCriteria(s)) metCounts++;
         return metCounts;
     }
 
@@ -37,4 +38,15 @@ public class PasswordStrengthMeter {
         }
         return false;
     }
+
+    private static boolean meetsContainingSpecialCharacterCriteria(String s) {
+        for (char ch : s.toCharArray()) {
+            if("[!@#$%^&*(),.?:{}|<>]".contains(Character.toString(ch))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
 }
