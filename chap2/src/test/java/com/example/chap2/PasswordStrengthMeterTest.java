@@ -43,6 +43,12 @@ public class PasswordStrengthMeterTest {
         assertStrength(null, PasswordStrength.INVALID);
     }
 
+    /*when empty input*/
+    @Test
+    void emptyInput_Then_Invalid() {
+        assertStrength("", PasswordStrength.INVALID);
+    }
+
 
 }
 
