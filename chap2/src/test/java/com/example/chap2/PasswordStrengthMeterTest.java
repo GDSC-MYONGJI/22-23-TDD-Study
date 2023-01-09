@@ -49,6 +49,12 @@ public class PasswordStrengthMeterTest {
         assertStrength("", PasswordStrength.INVALID);
     }
 
+    /*when meets other criteria except for uppercase then normal*/
+    @Test
+    void meetsOtherCriteria_except_for_Uppercase_Then_Normal() {
+        assertStrength("ab12!@df", PasswordStrength.NORMAL);
+    }
+
 
 }
 
