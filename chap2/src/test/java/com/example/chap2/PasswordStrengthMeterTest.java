@@ -67,6 +67,12 @@ public class PasswordStrengthMeterTest {
         assertStrength("12345", PasswordStrength.WEAK);
     }
 
+    /*when meets only uppercase criteria then weak*/
+    @Test
+    void meetsOnlyUppercaseCriteria_Then_Weak() {
+        assertStrength("ABZEF", PasswordStrength.WEAK);
+    }
+
 
 }
 
