@@ -23,7 +23,7 @@ public class PasswordStrengthMeter {
             metCount++;
         }
 
-        if(metCount == 1) {
+        if(metCount <= 1) {
             return PasswordStrength.WEAK;
         }
         if(metCount == 2) {
