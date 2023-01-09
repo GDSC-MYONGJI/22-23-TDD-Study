@@ -44,3 +44,21 @@ Actual   :0
 
 Process finished with exit code -1
 ```
+
+<br/>
+<br/>
+
+```java
+public class Calculator {
+    public static int plus(int a1, int a2) {
+        return 3;
+    }
+}
+```
+
+<br/>
+<br/>
+
+#### 테스트 결과
+
+![img.png](readmeimg%2Fimg.png)
