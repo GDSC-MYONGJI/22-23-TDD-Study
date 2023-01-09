@@ -61,6 +61,12 @@ public class PasswordStrengthMeterTest {
         assertStrength("abdefghi", PasswordStrength.WEAK);
     }
 
+    /*when meets only number criteria then weak*/
+    @Test
+    void meetsOnlyNumCriteria_Then_Weak() {
+        assertStrength("12345", PasswordStrength.WEAK);
+    }
+
 
 }
 
