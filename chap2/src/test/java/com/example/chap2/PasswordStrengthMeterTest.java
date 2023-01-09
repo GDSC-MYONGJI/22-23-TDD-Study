@@ -30,6 +30,13 @@ public class PasswordStrengthMeterTest {
         assertEquals(PasswordStrength.NORMAL, result2);
     }
 
+    /*Meets other criteria except for number then normal*/
+    @Test
+    void meetsOtherCriteria_except_for_number_Then_Normal() {
+        PasswordStrengthMeter meter = new PasswordStrengthMeter();
+        PasswordStrength result = meter.meter("ab!@ABqwer");
+        assertEquals(PasswordStrength.NORMAL, result);
+    }
 
 
 }
