@@ -7,6 +7,19 @@ public class PasswordStrengthMeter {
             return PasswordStrength.INVALID;
         }
 
+        int metCount = getMetCriteriaCounts(s);
+
+        if(metCount <= 1) {
+            return PasswordStrength.WEAK;
+        }
+        if(metCount == 2) {
+            return PasswordStrength.NORMAL;
+        }
+
+        return PasswordStrength.STRONG;
+    }
+
+    private int getMetCriteriaCounts(String s) {
         int metCount = 0;
 
         boolean lengthEnough = s.length() >= 8;
@@ -22,19 +35,11 @@ public class PasswordStrengthMeter {
         if(containsUpp) {
             metCount++;
         }
-
-        if(metCount <= 1) {
-            return PasswordStrength.WEAK;
-        }
-        if(metCount == 2) {
-            return PasswordStrength.NORMAL;
-        }
-
-        return PasswordStrength.STRONG;
+        return metCount;
     }
 
 
-    private static boolean meetsContainingUppercaseCriteria(String s) {
+    private boolean meetsContainingUppercaseCriteria(String s) {
         for (char c : s.toCharArray()) {
             if (Character.isUpperCase(c)) {
                 return true;
@@ -44,7 +49,7 @@ public class PasswordStrengthMeter {
     }
 
 
-    private static boolean meetsContainingNumberCriteria(String s) {
+    private boolean meetsContainingNumberCriteria(String s) {
         for(char c : s.toCharArray()) {
             if (c >= '0' && c <= '9') {
                 return true;
