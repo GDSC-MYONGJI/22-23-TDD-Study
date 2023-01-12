@@ -7,6 +7,9 @@ public class ExpiryDateCalculator {
     if(payData.getFirstBillingDate() != null) {
       return payData.getBillingDate().plusMonths(1).withDayOfMonth(payData.getFirstBillingDate().getDayOfMonth());
     }
+    if(payData.getPayAmount() >= 20_000) {
+      return payData.getBillingDate().plusMonths(payData.getPayAmount() / 10_000);
+    }
     return payData.getBillingDate().plusMonths(1);
   }
 
