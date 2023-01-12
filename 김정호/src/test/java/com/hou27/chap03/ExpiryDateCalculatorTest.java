@@ -17,4 +17,9 @@ public class ExpiryDateCalculatorTest {
     LocalDate result = cal.calculateExpiryDate(billingDate, payAmount);
     assertEquals(expiryDate, result);
   }
+
+  @Test
+  void 납부일과_한달_뒤_일자가_같지_않음() {
+    assertExpiryDate(LocalDate.of(2019, 1, 31), 10_000, LocalDate.of(2019, 2, 28));
+  }
 }
