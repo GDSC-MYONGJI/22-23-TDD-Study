@@ -1,19 +1,25 @@
 package testdriven.chap03;
 
+import net.bytebuddy.asm.Advice;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
 import java.time.LocalDate;
 
 public class PayData {
     private LocalDate billingDate;
+    private LocalDate firstBillingDate;
     private int payAmount;
     private PayData(){}
 
-    public PayData(LocalDate billingDate, int payAmount){
+    public PayData(LocalDate firstBillingDate, LocalDate billingDate, int payAmount){
+        this.firstBillingDate = firstBillingDate;
         this.billingDate = billingDate;
         this.payAmount = payAmount;
     }
 
+    public LocalDate getFirstBillingDate(){
+        return firstBillingDate;
+    }
     public LocalDate getBillingDate(){
         return billingDate;
     }
@@ -27,6 +33,11 @@ public class PayData {
 
     public static class Builder{
         private PayData payData = new PayData();
+
+        public Builder firstBillingDate(LocalDate firstBillingDate){
+            payData.firstBillingDate = firstBillingDate;
+            return this;
+        }
 
         public Builder billingDate(LocalDate billingDate){
             payData.billingDate = billingDate;

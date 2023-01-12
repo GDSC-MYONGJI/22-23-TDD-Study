@@ -16,10 +16,10 @@ public class ExpiryDateCalculatorTest {
                 .build(),
                 LocalDate.of(2019, 4, 1));
         assertExpiryDate(PayData.builder()
-                        .billingDate(LocalDate.of(2019, 1, 31))
+                        .billingDate(LocalDate.of(2019, 1, 5))
                         .payAmount(10_000)
                         .build(),
-                LocalDate.of(2019, 2, 28));
+                LocalDate.of(2019, 2, 5));
     }
 
     @Test
@@ -29,6 +29,16 @@ public class ExpiryDateCalculatorTest {
                         .payAmount(10_000)
                         .build(),
                 LocalDate.of(2019, 2, 28));
+    }
+
+    @Test
+    void 첫_납부일과_만료일이_일자가_다를때_만원_납부(){
+        PayData payData = PayData.builder()
+                .firstBillingDate(LocalDate.of(2019, 5, 31))
+                .billingDate(LocalDate.of(2019, 6, 30))
+                .payAmount(10_000)
+                .build();
+        assertExpiryDate(payData, LocalDate.of(2019, 7, 31));
     }
 
     private void assertExpiryDate(PayData payData, LocalDate expectedExpiryDate) {
