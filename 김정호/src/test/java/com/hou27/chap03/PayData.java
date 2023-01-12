@@ -25,6 +25,10 @@ public class PayData {
    * billingDate와 payAmount를 설정하는 것을 쉽게 알 수 있도록
    * builder pattern을 적용
    */
+  public static Builder builder() {
+    return new Builder();
+  }
+  
   public static class Builder {
     private PayData data = new PayData();
 
