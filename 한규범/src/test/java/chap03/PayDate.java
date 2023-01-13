@@ -30,6 +30,10 @@ public class PayDate {
         this.payAmount = payAmount;
     }
 
+    public static Builder builder(){
+        return new Builder();
+    }
+
     public static class Builder{
         private PayDate data = new PayDate();
 
