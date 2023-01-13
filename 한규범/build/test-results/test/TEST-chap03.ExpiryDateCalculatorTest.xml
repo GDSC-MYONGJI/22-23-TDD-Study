@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="chap03.ExpiryDateCalculatorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-01-13T08:39:02" hostname="hangyubeom-ui-MacBookPro.local" time="0.007">
+  <properties/>
+  <testcase name="납부일과_한달_뒤_일자가_같지_않음()" classname="chap03.ExpiryDateCalculatorTest" time="0.007"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
