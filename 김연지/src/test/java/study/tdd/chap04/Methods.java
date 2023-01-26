@@ -19,8 +19,8 @@ public class Methods {
     @Test
     void fail_메서드() {
         try {
-            AuthService authService = new AuthService();
-            authService.authenticate(null, null);
+            //AuthService authService = new AuthService();
+            //authService.authenticate(null, null);
             fail();
         } catch (IllegalArgumentException e) {
 
@@ -31,16 +31,16 @@ public class Methods {
     void assertThrows_메서드() {
         assertThrows(IllegalArgumentException.class,
                 () -> {
-            AuthService authService = new AuthService();
-                    authService.authenticate(null, null);
+            //AuthService authService = new AuthService();
+                    //authService.authenticate(null, null);
                 });
 
         // assertThrows() 메서드는 발생한 익셉션 객체를 리턴한다.
         // 발생한 익셉션을 이용해서 추가로 검증
         IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class,
                 () -> {
-                    AuthService authService = new AuthService();
-                    authService.authenticate(null, null);
+                    //AuthService authService = new AuthService();
+                    //authService.authenticate(null, null);
                 });
         assertTrue(thrown.getMessage().contains("id"));
     }
