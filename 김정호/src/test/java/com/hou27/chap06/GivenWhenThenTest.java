@@ -20,7 +20,7 @@ public class GivenWhenThenTest {
 
   @Test
   void baseballGameException() {
-    assertThrows(NullPointerException.class, () ->
+    assertThrows(IllegalArgumentException.class, () ->
       new BaseballGame("110")
     );
   }
