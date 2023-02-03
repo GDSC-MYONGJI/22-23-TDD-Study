@@ -18,4 +18,11 @@ public class GivenWhenThenTest {
     assertEqual(0, score.balls());
   }
 
+  @Test
+  void baseballGameException() {
+    assertThrows(NullPointerException.class, () ->
+      new BaseballGame("110")
+    );
+  }
+
 }
