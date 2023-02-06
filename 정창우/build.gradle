@@ -18,6 +18,10 @@ dependencies {
 	testImplementation('org.junit.jupiter:junit-jupiter:5.5.0')
 }
 
+compileJava.options.encoding = 'UTF-8'
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
 tasks.named('test') {
 	useJUnitPlatform()
 }
