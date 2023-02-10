@@ -7,6 +7,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class CardNumberValidator {
+    /*
     public CardValidity validate(String cardNumber) {
         HttpClient httpClient = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
@@ -33,4 +34,5 @@ public class CardNumberValidator {
             return CardValidity.ERROR;
         }
     }
+    */
 }

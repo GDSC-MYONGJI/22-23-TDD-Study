@@ -3,6 +3,7 @@ package study.tdd.chap07;
 import java.time.LocalDateTime;
 
 public class AutoDebitRegister {
+    /*
     private CardNumberValidator validator;
     private AutoDebitInfoRepository repository;
 
@@ -29,4 +30,5 @@ public class AutoDebitRegister {
 
         return RegisterResult.success();
     }
+    */
 }
