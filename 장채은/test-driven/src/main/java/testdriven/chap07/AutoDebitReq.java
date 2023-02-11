@@ -11,4 +11,8 @@ public class AutoDebitReq {
     public String getCardNumber() {
         return this.cardNo;
     }
+
+    public String getUserId() {
+        return this.user;
+    }
 }

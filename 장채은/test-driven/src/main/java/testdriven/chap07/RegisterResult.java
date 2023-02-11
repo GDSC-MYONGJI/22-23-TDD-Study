@@ -9,4 +9,8 @@ public class RegisterResult {
     public static RegisterResult success() {
         return new RegisterResult();
     }
+
+    public CardValidity getValidity() {
+        return null;
+    }
 }
