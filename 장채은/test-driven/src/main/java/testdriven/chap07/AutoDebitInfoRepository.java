@@ -1,4 +1,6 @@
 package testdriven.chap07;
 
-public class AutoDebitInfoRepository {
+public interface AutoDebitInfoRepository {
+    void save(AutoDebitInfo info);
+    AutoDebitInfo findOne(String userId);
 }
