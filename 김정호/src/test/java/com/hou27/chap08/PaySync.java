@@ -6,9 +6,13 @@ import java.nio.file.Path;
 import java.util.stream.Collectors;
 
 public class PaySync {
-  // 의존 객체를 직접 생성하고 있다.
-  private PayInfoDao payInfoDao = new PayInfoDao();
+  private PayInfoDao payInfoDao;
   private String filePath = "tmp/paydata/payinfo.csv";
+
+  // 생성자를 통해 의존성을 주입받는다.
+  public PaySync(PayInfoDao payInfoDao) {
+    this.payInfoDao = payInfoDao;
+  }
 
   // 경로를 설정 가능하게 메서드 생성
   public void setFilePath(String filePath) {
