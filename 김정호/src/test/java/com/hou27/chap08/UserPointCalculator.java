@@ -1,16 +1,21 @@
 package com.hou27.chap08;
 
+import java.time.LocalDate;
+
 public class UserPointCalculator {
 
   private SubscriptionDao subscriptionDao;
   private ProductDao productDao;
+  private Times times;
 
   public UserPointCalculator(
       SubscriptionDao subscriptionDao,
-      ProductDao productDao
+      ProductDao productDao,
+      Times times
   ) {
     this.subscriptionDao = subscriptionDao;
     this.productDao = productDao;
+    this.times = times;
   }
 
   public int calculatePoint(User u) {
@@ -20,7 +25,8 @@ public class UserPointCalculator {
     }
 
     Product p = productDao.selectById(s.getProductId());
-    LocalDate now = LocalDate.now(); // 현재 날짜를 구한다.
+//    LocalDate now = LocalDate.now(); // 현재 날짜를 구한다.
+    LocalDate now = times.today(); // 현재 날짜를 구한다.
     PointRule rule = new PointRule();
     int point = rule.calculate(s, p, now);
 //    int point = 0;
