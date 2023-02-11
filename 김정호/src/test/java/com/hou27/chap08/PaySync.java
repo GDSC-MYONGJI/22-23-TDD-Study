@@ -5,6 +5,7 @@ import java.nio.file.Path;
 import java.util.stream.Collectors;
 
 public class PaySync {
+  // 의존 객체를 직접 생성하고 있다.
   private PayInfoDao payInfoDao = new PayInfoDao();
 
   public void sync() {
