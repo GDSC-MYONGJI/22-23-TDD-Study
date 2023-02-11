@@ -1,5 +1,8 @@
 package testdriven.chap07;
 
+/**
+ * 외부 상황 흉내: 카드 정보 API 를 대신하여 유효한 카드 번호, 도난 카드 번호와 같은 상황을 흉내냄.
+ */
 public class StubCardNumberValidator extends CardNumberValidator{
     private String invalidNo;
     private String theftNo;
