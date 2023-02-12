@@ -24,6 +24,9 @@ dependencies {
 
 	// junit
 	testImplementation('org.junit.jupiter:junit-jupiter:5.5.0')
+
+	// mockito
+	testImplementation('org.mockito:mockito-core:4.5.1')
 }
 
 tasks.named('test') {
