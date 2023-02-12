@@ -1,5 +1,5 @@
 package testdriven.chap07.mockito;
 
 public enum GameLevel {
-    EASY;
+    EASY, NORMAL;
 }
