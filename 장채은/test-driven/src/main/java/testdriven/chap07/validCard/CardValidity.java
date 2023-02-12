@@ -1,4 +1,4 @@
-package testdriven.chap07;
+package testdriven.chap07.validCard;
 
 public enum CardValidity {
     VALID, INVALID, EXPIRED, THEFT, UNKNOWNS, ERROR;

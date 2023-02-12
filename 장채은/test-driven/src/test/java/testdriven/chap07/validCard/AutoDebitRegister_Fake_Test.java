@@ -1,13 +1,12 @@
-package testdriven.chap07;
+package testdriven.chap07.validCard;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import testdriven.chap07.validCard.*;
 
 import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static testdriven.chap07.CardValidity.INVALID;
-import static testdriven.chap07.CardValidity.THEFT;
 
 public class AutoDebitRegister_Fake_Test {
     private AutoDebitRegister register;

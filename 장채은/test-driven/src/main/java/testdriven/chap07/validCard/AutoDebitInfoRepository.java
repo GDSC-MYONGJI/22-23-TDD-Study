@@ -1,4 +1,4 @@
-package testdriven.chap07;
+package testdriven.chap07.validCard;
 
 public interface AutoDebitInfoRepository {
     void save(AutoDebitInfo info);

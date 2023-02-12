@@ -1,10 +1,14 @@
-package testdriven.chap07;
+package testdriven.chap07.validCard;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import testdriven.chap07.validCard.AutoDebitRegister;
+import testdriven.chap07.validCard.AutoDebitReq;
+import testdriven.chap07.validCard.RegisterResult;
+import testdriven.chap07.validCard.StubCardNumberValidator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static testdriven.chap07.CardValidity.*;
+import static testdriven.chap07.validCard.CardValidity.*;
 
 public class AutoDebitRegister_Stub_Test {
     private AutoDebitRegister register;

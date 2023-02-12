@@ -1,4 +1,4 @@
-package testdriven.chap07;
+package testdriven.chap07.validCard;
 
 public class RegisterResult {
     private CardValidity validity;

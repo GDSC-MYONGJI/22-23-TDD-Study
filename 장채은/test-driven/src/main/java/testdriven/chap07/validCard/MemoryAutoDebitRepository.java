@@ -1,4 +1,4 @@
-package testdriven.chap07;
+package testdriven.chap07.validCard;
 
 import java.util.HashMap;
 import java.util.Map;
