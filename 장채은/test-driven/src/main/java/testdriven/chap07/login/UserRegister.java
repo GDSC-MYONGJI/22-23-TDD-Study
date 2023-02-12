@@ -5,11 +5,13 @@ public class UserRegister {
     private UserRepository userRepository;
     private EmailNotifier emailNotifier;
 
-    public UserRegister(WeakPasswordChecker passwordChecker, UserRepository userRepository, SpyEmailNotifier spyEmailNotifier){
+    public UserRegister(WeakPasswordChecker passwordChecker, UserRepository userRepository, EmailNotifier spyEmailNotifier){
         this.passwordChecker = passwordChecker;
         this.userRepository = userRepository;
         this.emailNotifier = spyEmailNotifier;
     }
+
+
     public void register(String id, String pw, String email){
         if(passwordChecker.checkPasswordWeak(pw)){
             throw new WeakPasswordException();
