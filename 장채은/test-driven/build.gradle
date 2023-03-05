@@ -20,6 +20,10 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.projectlombok:lombok:1.18.20'
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	implementation 'com.epages:wiremock-spring-boot-starter:0.8.0'
+	implementation 'io.github.ricall.junit5-wiremock:junit5-wiremock:2.0.0'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
 	// junit
@@ -27,6 +31,12 @@ dependencies {
 
 	// mockito
 	testImplementation('org.mockito:mockito-core:4.5.1')
+
+	// lombok
+	annotationProcessor 'org.projectlombok:lombok'
+
+	// wiremock 서버 api 스텁으로 대체 가능함.
+	testImplementation 'de.skuzzle.springboot.test:spring-boot-wiremock:0.0.18'
 }
 
 tasks.named('test') {
